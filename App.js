@@ -4,6 +4,8 @@ import {LoginScreen} from './Pages/Myprofile/Login';
 import {SignUpScreen} from './Pages/Myprofile/Signup';
 import {HomeScreen} from './Pages/Search/home';
 import {CategoryScreen} from './Pages/Sell/Category'
+import {SubCategoryScreen} from './Pages/Sell/SubCategory'
+import {AdDetailsScreen} from './Pages/Sell/AdDetail'
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';  
 import Icon from 'react-native-vector-icons/Ionicons';
 import {StyleSheet, Text, View,Button} from 'react-native';    
@@ -30,10 +32,12 @@ const Ads = createStackNavigator(
 
 const Sell = createStackNavigator(
   {    
-     Home: {screen: CategoryScreen},
+     Category: {screen: CategoryScreen},
+     SubCategory:{screen:SubCategoryScreen},
+     InsertDetail:{screen:AdDetailsScreen}
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Category',
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: 'steelblue',

@@ -24,7 +24,11 @@ export class CategoryScreen extends React.Component {
       let row=[];
       for(let i=0;i<Categories.length;i++){
           row.push(
-           <TouchableOpacity key={Categories[i].Name} style={styles.Category}>
+           <TouchableOpacity key={Categories[i].Name} style={styles.Category} 
+             onPress={() => this.props.navigation.navigate('SubCategory',
+             {
+              Category: Categories[i].Name,
+            })}>
                 <Icon size={25} name={Categories[i].Icon}/>  
                 <Text>{Categories[i].Name}</Text>
             </TouchableOpacity>
