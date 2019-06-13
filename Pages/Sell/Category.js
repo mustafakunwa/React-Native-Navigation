@@ -10,50 +10,34 @@ export class CategoryScreen extends React.Component {
    
 
     render() {
-     
+      let CategoriesView=[];
+      let Categories=[
+          {Name:'Cars',Icon:'ios-car'},
+          {Name:'Mobiles',Icon:'ios-phone-portrait'},
+          {Name:'Bikes',Icon:'ios-bicycle'},
+          {Name:'Electronics & Appliances',Icon:'logo-playstation'},
+          {Name:'Furniture',Icon:'ios-bed'},
+          {Name:'Property',Icon:'ios-paper'},
+          {Name:'Books & Sports',Icon:'ios-book'},
+          {Name:'More Categories',Icon:'ios-keypad'},
+      ]
+      let row=[];
+      for(let i=0;i<Categories.length;i++){
+          row.push(
+           <TouchableOpacity key={Categories[i].Name} style={styles.Category}>
+                <Icon size={25} name={Categories[i].Icon}/>  
+                <Text>{Categories[i].Name}</Text>
+            </TouchableOpacity>
+          )
+        if(row.length==2){
+              CategoriesView.push(<View key={i} style={styles.row}>{row}</View>)
+              row=[];
+        }
+      }
+
       return (
         <View style={styles.container}>
-             <View style={styles.row}>
-                <View style={styles.Category}>
-                    <Icon size={25} name={'ios-car'}/>  
-                    <Text>Cars</Text>
-                </View>
-                <View style={styles.Category}>
-                    <Icon size={25} name={'ios-phone-portrait'}/>  
-                    <Text>Mobiles</Text>
-                </View>              
-            </View>
-            <View style={styles.row}>
-            <View style={styles.Category}>
-                    <Icon size={25} name={'md-bicycle'}/>  
-                    <Text>Bikes</Text>
-                </View>
-                <View style={styles.Category}>
-                    <Icon size={25} name={'logo-playstation'}/>  
-                    <Text>Electronics & Appliances</Text>
-                </View>
-            </View>
-            <View style={styles.row}>
-            <View style={styles.Category}>
-                    <Icon size={25} name={'ios-bed'}/>  
-                    <Text>Furniture</Text>
-                </View>
-                <View style={styles.Category}>
-                    <Icon size={25} name={'ios-paper'}/>  
-                    <Text>Property</Text>
-                </View>   
-            </View>
-            <View style={styles.row}>
-            <View style={styles.Category}>
-                    <Icon size={25} name={'ios-book'}/>  
-                    <Text>Books & Sports</Text>
-                </View>
-                <View style={styles.Category}>
-                    <Icon size={25} name={'ios-keypad'}/>  
-                    <Text>More Categories</Text>
-                </View>   
-            </View>
-       
+            {CategoriesView}
        </View>
       );
     }
