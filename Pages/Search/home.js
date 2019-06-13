@@ -21,15 +21,11 @@ class LogoTitle extends React.Component {
         //headerTitle: <LogoTitle />,
     };
     render() {
-      const {navigate} = this.props.navigation;
+      
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
        
-        <Button
-           title="Go to Login"
-        //    onPress={() => this.props.navigation.navigate('Login')}
-           onPress={()=>this.props.navigation.openDrawer()}
-         />       
+       
        </View>
       );
     }
