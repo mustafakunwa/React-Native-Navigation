@@ -3,6 +3,7 @@ import {createStackNavigator, createAppContainer,createBottomTabNavigator,create
 import {LoginScreen} from './Pages/Myprofile/Login';
 import {SignUpScreen} from './Pages/Myprofile/Signup';
 import {HomeScreen} from './Pages/Search/home';
+import {AdsScreen} from './Pages/Search/AdsPage';
 import {CategoryScreen} from './Pages/Sell/Category'
 import {SubCategoryScreen} from './Pages/Sell/SubCategory'
 import {AdDetailsScreen} from './Pages/Sell/AdDetail'
@@ -14,6 +15,7 @@ import {StyleSheet, Text, View,Button} from 'react-native';
 const Ads = createStackNavigator(
   {    
      Home: {screen: HomeScreen},
+     AdsScreen:{screen:AdsScreen}
   },
   {
     initialRouteName: 'Home',

@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View,Button,Image,Header,TouchableOpacity,ScrollView   } from 'react-native';
+import {Platform, StyleSheet, Text, View,Button,Image,Header,TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { ScrollView } from 'react-native-gesture-handler';
 
- export class HomeScreen extends React.Component {
-    static navigationOptions = {
-        title:'Home',
-    };
+export class AdsScreen extends React.Component {
+    static navigationOptions = ({ navigation }) => {
+      return {
+        title: navigation.getParam('Category'),
+      };
+    };   
     render() {
       let CategoriesView=[];
       let Categories=[
@@ -21,11 +24,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
       let row=[];
       for(let i=0;i<Categories.length;i++){
           row.push(
-           <TouchableOpacity key={Categories[i].Name} style={styles.Category}
-             onPress={() => this.props.navigation.navigate('AdsScreen',
-             {
-              Category: Categories[i].Name,
-            })}>
+           <TouchableOpacity key={Categories[i].Name} style={styles.Category}>
                 <Icon size={25} name={Categories[i].Icon} color={Categories[i].color}/>  
                 <Text>{Categories[i].Name}</Text>
             </TouchableOpacity>
@@ -36,7 +35,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
         }
       }
       return (
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
           <View style={styles.Categories}>
             <View style={styles.Header}>
                 <Text style={styles.Browse}>Browse Categories</Text>
@@ -51,9 +50,11 @@ import Icon from 'react-native-vector-icons/Ionicons';
               <Text style={styles.Browse}>Recommendations for you</Text>
             </View>
             <View style={styles.Recomendedscroll}>
-          </View>
-        </View>           
-       </ScrollView>
+
+            </View>
+
+          </View>           
+       </View>
       );
     }
   }
