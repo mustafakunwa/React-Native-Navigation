@@ -4,10 +4,11 @@ import {LoginScreen} from './Pages/Myprofile/Login';
 import {SignUpScreen} from './Pages/Myprofile/Signup';
 import {HomeScreen} from './Pages/Search/home';
 import {AdsScreen} from './Pages/Search/AdsPage';
-import {CategoryScreen} from './Pages/Sell/Category'
-import {SubCategoryScreen} from './Pages/Sell/SubCategory'
-import {AdDetailsScreen} from './Pages/Sell/AdDetail'
-import {ImagePickerScreen} from './Pages/Sell/ImagePicker'
+import {CategoryScreen} from './Pages/Sell/Category';
+import {SubCategoryScreen} from './Pages/Sell/SubCategory';
+import {AdDetailsScreen} from './Pages/Sell/AdDetail';
+import {ImagePickerScreen} from './Pages/Sell/ImagePicker';
+import {MultipleImagePickerScreen} from './Pages/Sell/MultipleImage';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';  
 import Icon from 'react-native-vector-icons/Ionicons';
 import {StyleSheet, Text, View,Button} from 'react-native';    
@@ -38,7 +39,8 @@ const Sell = createStackNavigator(
      Category: {screen: CategoryScreen},
      SubCategory:{screen:SubCategoryScreen},
      InsertDetail:{screen:AdDetailsScreen},
-     ImagePicker:{screen:ImagePickerScreen}
+     ImagePicker:{screen:ImagePickerScreen},
+     MultipleImagePicker:{screen:MultipleImagePickerScreen}
   },
   {
     initialRouteName: 'Category',
