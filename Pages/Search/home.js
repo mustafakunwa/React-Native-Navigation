@@ -36,7 +36,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
         }
       }
       return (
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
           <View style={styles.Categories}>
             <View style={styles.Header}>
                 <Text style={styles.Browse}>Browse Categories</Text>
@@ -53,7 +53,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
             <View style={styles.Recomendedscroll}>
           </View>
         </View>           
-       </ScrollView>
+       </View>
       );
     }
   }
