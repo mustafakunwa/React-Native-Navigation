@@ -42,6 +42,10 @@ export class CategoryScreen extends React.Component {
       return (
         <View style={styles.container}>
             {CategoriesView}
+            <TouchableOpacity style={styles.Category} 
+             onPress={() => this.props.navigation.navigate('ImagePicker')}>
+                <Text>ImagePicker</Text>
+            </TouchableOpacity>
        </View>
       );
     }

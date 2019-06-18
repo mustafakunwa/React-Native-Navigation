@@ -7,6 +7,7 @@ import {AdsScreen} from './Pages/Search/AdsPage';
 import {CategoryScreen} from './Pages/Sell/Category'
 import {SubCategoryScreen} from './Pages/Sell/SubCategory'
 import {AdDetailsScreen} from './Pages/Sell/AdDetail'
+import {ImagePickerScreen} from './Pages/Sell/ImagePicker'
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';  
 import Icon from 'react-native-vector-icons/Ionicons';
 import {StyleSheet, Text, View,Button} from 'react-native';    
@@ -36,7 +37,8 @@ const Sell = createStackNavigator(
   {    
      Category: {screen: CategoryScreen},
      SubCategory:{screen:SubCategoryScreen},
-     InsertDetail:{screen:AdDetailsScreen}
+     InsertDetail:{screen:AdDetailsScreen},
+     ImagePicker:{screen:ImagePickerScreen}
   },
   {
     initialRouteName: 'Category',
